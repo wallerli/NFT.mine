@@ -13,7 +13,7 @@ PORT = 8080
 
 
 suggestion_cols = 5
-suggestion_rows = 4
+suggestion_rows = 5
 num_suggestions = suggestion_rows * suggestion_cols
 
 
@@ -61,8 +61,8 @@ def parse_nft_query(url_path):
         return '', ''
     wallet = wallets[0]
     collections = []
-    if 'collection' in parsed_query.keys():
-        collections = parsed_query['collection']
+    if 'collection_slug' in parsed_query.keys():
+        collections = parsed_query['collection_slug']
     if len(collections) > 1:
         return '', ''
     if len(collections) == 1:
@@ -99,7 +99,6 @@ def generate_recommendation(to_addr, collection_slug):
                 current.axis('off')
                 current.set_xlabel('off')
                 continue
-            print('Retrying ...')
             image_i = image_i + 1
             continue
         current.set_title('\n' 
@@ -147,7 +146,7 @@ class MyHandler(BaseHTTPRequestHandler):
 def main():
     server = HTTPServer((HOST, PORT), MyHandler)
     print(f'NFT.mine is up')
-    print(f'localhost:{PORT}/match?wallet_address=&collection_slug=')
+    print(f'(localhost:{PORT}/match?wallet_address=&collection_slug=)')
     try:
         server.serve_forever()
     except KeyboardInterrupt:
