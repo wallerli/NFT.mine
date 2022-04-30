@@ -145,6 +145,7 @@ class MyHandler(BaseHTTPRequestHandler):
 
 def main():
     server = HTTPServer((HOST, PORT), MyHandler)
+    os.makedirs(cache_path, exist_ok=True)
     print(f'NFT.mine is up')
     print(f'(localhost:{PORT}/match?wallet_address=&collection_slug=)')
     try:
