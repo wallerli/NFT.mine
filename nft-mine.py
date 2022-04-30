@@ -1,5 +1,6 @@
 '''
-Install requirements: pip install -r requirements.txt
+Install requirements:   pip install -r requirements.txt
+Run server:             python nft-mine.py
 '''
 
 from http.server import HTTPServer, BaseHTTPRequestHandler
