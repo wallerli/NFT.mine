@@ -1,3 +1,7 @@
+'''
+Install requirements: pip install -r requirements.txt
+'''
+
 from http.server import HTTPServer, BaseHTTPRequestHandler
 from urllib.parse import urlparse, parse_qs
 import pandas as pd
@@ -11,15 +15,9 @@ plt.style.use('ggplot')
 HOST = ""
 PORT = 8080
 
-
 suggestion_cols = 5
 suggestion_rows = 5
 num_suggestions = suggestion_rows * suggestion_cols
-
-
-def generate_header(header):
-    return bytes(f'<html><body><h1>{header}</h1></body></html>', 'utf-8')
-
 
 to_addr_index = 0
 asset_name_index = 1
@@ -27,24 +25,24 @@ probability_index = 2
 image_url_index = 3
 collection_slug_index = 4
 
-
 cache_path = 'cache/'
 data_path = 'data/result_matrix.csv'
-
 
 result_matrix = pd.read_csv(data_path)[
     ['to_addr', 'asset_name', 'probability', 'image_url', 'collection_slug']]
 print(f'Loaded {result_matrix.shape[0]} results')
 
-
 n_all_wallets = result_matrix['to_addr'].nunique()
 all_wallets = result_matrix['to_addr'].unique()
 print(f'Found {n_all_wallets} unique wallets')
 
-
 n_all_collections = result_matrix['collection_slug'].nunique()
 all_collections = result_matrix['collection_slug'].unique()
 print(f'Found {n_all_collections} unique collections')
+
+
+def generate_header(header):
+    return bytes(f'<html><body><h1>{header}</h1></body></html>', 'utf-8')
 
 
 def parse_nft_query(url_path):
