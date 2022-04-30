@@ -31,15 +31,15 @@ data_path = 'data/result_matrix.csv'
 
 result_matrix = pd.read_csv(data_path)[
     ['to_addr', 'asset_name', 'probability', 'image_url', 'collection_slug']]
-print(f'Loaded {result_matrix.shape[0]} results')
+# print(f'Loaded {result_matrix.shape[0]} results')
 
 n_all_wallets = result_matrix['to_addr'].nunique()
 all_wallets = result_matrix['to_addr'].unique()
-print(f'Found {n_all_wallets} unique wallets')
+# print(f'Found {n_all_wallets} unique wallet addresses')
 
 n_all_collections = result_matrix['collection_slug'].nunique()
 all_collections = result_matrix['collection_slug'].unique()
-print(f'Found {n_all_collections} unique collections')
+# print(f'Found {n_all_collections} unique collection slugs')
 
 
 def generate_header(header):
