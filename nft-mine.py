@@ -50,7 +50,7 @@ def parse_nft_query(url_path):
     wallet = ''
     collection = ''
     parsed_path = urlparse(url_path)
-    if parsed_path.path != '/match' or parsed_path.query == '':
+    if parsed_path.path != '/recommend' or parsed_path.query == '':
         return '', ''
     parsed_query = parse_qs(parsed_path.query)
     if 'wallet_address' not in parsed_query.keys():
@@ -146,7 +146,7 @@ def main():
     server = HTTPServer((HOST, PORT), MyHandler)
     os.makedirs(cache_path, exist_ok=True)
     print(f'NFT.mine is up')
-    print(f'(localhost:{PORT}/match?wallet_address=&collection_slug=)')
+    print(f'(localhost:{PORT}/recommend?wallet_address=&collection_slug=)')
     try:
         server.serve_forever()
     except KeyboardInterrupt:
