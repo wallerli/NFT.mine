@@ -1,6 +1,6 @@
 # NFT.mine
 
-An xDeepFM-based recommender for OpenSea buyers 
+An xDeepFM-based recommender for NFT buyers 
 
 ## Contributors
 
