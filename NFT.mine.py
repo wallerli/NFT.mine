@@ -1,6 +1,6 @@
 '''
-Install requirements:   pip install -r requirements.txt
-Run server:             python nft-mine.py
+Install dependencies: pip install -r requirements.txt
+Launch server:        python NFT.mine.py
 '''
 
 from http.server import HTTPServer, BaseHTTPRequestHandler
@@ -145,8 +145,8 @@ class MyHandler(BaseHTTPRequestHandler):
 def main():
     server = HTTPServer((HOST, PORT), MyHandler)
     os.makedirs(cache_path, exist_ok=True)
-    print(f'NFT.mine is up')
-    print(f'(localhost:{PORT}/recommend?wallet_address=&collection_slug=)')
+    print(f'NFT.mine is up -> ', end='')
+    print(f'http://localhost:{PORT}/recommend?wallet_address=&collection_slug=')
     try:
         server.serve_forever()
     except KeyboardInterrupt:
