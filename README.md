@@ -1,6 +1,6 @@
 # NFT.mine
 
-An xDeepFM-based recommender backend for OpenSea NFT buyers
+NFT.mine is an xDeepFM-based recommender backend for OpenSea NFT buyers.
 
 [![build status][build status badge]][build status page]
 
