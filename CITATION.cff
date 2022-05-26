@@ -1,0 +1,15 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite it as below."
+authors:
+- family-names: "Li"
+  given-names: "Shuwei"
+- family-names: "Jin"
+  given-names: "Yucheng"
+- family-names: "Hsu"
+  given-names: "Pin-Lun Hsu"
+- family-names: "Luo"
+  given-names: "Ya-Sin"
+title: "NFT.mine: An xDeepFM-based recommender software for OpenSea NFT buyers"
+# version: 0.0.1
+# date-released: 2022-5-25
+url: "https://github.com/wallerli/NFT.mine"
