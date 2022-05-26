@@ -2,7 +2,7 @@
 
 An xDeepFM-based recommender software for OpenSea NFT buyers
 
-[![python status][python status badge]][python status page]
+[![build status][build status badge]][build status page]
 
 ## Authors
 
@@ -59,8 +59,8 @@ To perform this whole process, run all notebooks in `notebook/` according to the
 
 ![Architecture image][Architecture image link]
 
-[python status badge]: ../../actions/workflows/python-app.yml/badge.svg
-[python status page]: ../../actions/workflows/python-app.yml
+[build status badge]: ../../actions/workflows/python-app.yml/badge.svg
+[build status page]: ../../actions/workflows/python-app.yml
 
 [OpenSea link]: https://opensea.io
 [here link]: https://docs.opensea.io/reference/request-an-api-key
