@@ -2,6 +2,8 @@
 
 An xDeepFM-based recommender software for OpenSea NFT buyers
 
+[![python status][python status badge]][python status page]
+
 ## Authors
 
 Shuwei Li, Yucheng Jin, Pin-Lun Hsu, Ya-Sin Luo
@@ -56,6 +58,9 @@ The dataset used to make recomendation need to be updated regularly. This includ
  - Generate dataset for redommendations
 
 To perform this whole process, run all notebooks in `notebook/` according to the serial number in notebook names. After this, put the generated `result_matrix.csv` in `data/` and update the `data_path` defined in `NFT.mine.py`, and relaunch NFT.mine. Note that an OpenSea api key is needed for data scrapping. After obtaining a key [here][here link], replace the `x-api-key` in `0_scraper.ipynb` with your key.
+
+[python status badge]: ../../actions/workflows/python-app.yml/badge.svg
+[python status page]: ../../actions/workflows/python-app.yml
 
 [OpenSea link]: https://opensea.io
 [here link]: https://docs.opensea.io/reference/request-an-api-key
