@@ -1,6 +1,6 @@
 # NFT.mine
 
-An xDeepFM-based recommender software for OpenSea NFT buyers
+An xDeepFM-based recommender backend for OpenSea NFT buyers
 
 [![build status][build status badge]][build status page]
 
@@ -24,27 +24,25 @@ Use the following command to launch NFT.mine.
 python NFT.mine.py
 ```
 
-By default, NFT.mine will listen on the port defined in `NFT.mine.py`. NFT.mine supports two query combinations:
+By default, NFT.mine will listen on the `PORT` specified in `NFT.mine.py`. NFT.mine supports two query combinations:
 
 ```
-http://localhost:{DEFAULT_PORT}/recommend?wallet_address=12345678
+http://localhost:PORT/recommend?wallet_address=12345678
 ```
 
 When requested, NFT.mine will make recommendations with respect for a user based on their wallet address in the query.
 
 ```
-http://localhost:{DEFAULT_PORT}/recommend?wallet_address=12345678&collection_slug=abcdefgh
+http://localhost:PORT/recommend?wallet_address=12345678&collection_slug=abcdefgh
 ```
 
 When requested, NFT.mine will make recommendations with respect for a user based on their wallet address in the query but the recoooemndations will be limited to only the collection slug in the query.
 
-## Response Code
-
-`404` will be responeded if the `wallet_address` is not provided or not found in the dataset, or when the `collection_slug` is not found in dataset.
-
-## Rendering
+## Response
 
 NFT.mine will respond with a pre-rendered image containing the recommendations. The recommendations will be rendered in a grid whose number of rows and columns can be adjusted by modifying the `suggestion_cols` and `suggestion_cols` defined in `NFT.mine.py`. Pre-rendered images will be cached in `cache/` so re-rendering is not needed for the same request query. To force re-rendering, delete `cache` and relaunch NFT.mine.
+
+`NOT FOUND` will be responeded if the `wallet_address` is not provided or not found in the dataset, or when the `collection_slug` is not found in dataset.
 
 ## Update Dataset
 
