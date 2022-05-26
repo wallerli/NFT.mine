@@ -42,7 +42,7 @@ When requested, NFT.mine will make recommendations with respect for a user based
 
 NFT.mine will respond with a pre-rendered image containing the recommendations. The recommendations will be rendered in a grid whose number of rows and columns can be adjusted by modifying the `suggestion_cols` and `suggestion_cols` defined in `NFT.mine.py`. Pre-rendered images will be cached in `cache/` so re-rendering is not needed for the same request query. To force re-rendering, delete `cache` and relaunch NFT.mine.
 
-`NOT FOUND` will be responeded if the `wallet_address` is not provided or not found in the dataset, or when the `collection_slug` is not found in dataset.
+`NOT FOUND` will be responded if the `wallet_address` is not provided or not found in the dataset, or when the `collection_slug` is not found in dataset.
 
 ## Update Dataset
 
